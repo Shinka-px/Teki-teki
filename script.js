@@ -1,5 +1,5 @@
 let currentCrossword = 1;
-let timeLeft = 60;
+let timeLeft = 200;
 
 function startTimer() {
   const timerElement = document.getElementById('timer');
@@ -18,7 +18,7 @@ function startTimer() {
       crossword.style.display = 'none';
       if (currentCrossword < crosswords.length) {
         currentCrossword++;
-        timeLeft = 60;
+        timeLeft = 200;
         setTimeout(() => {
           startTimer();
         }, 2000); // Tunda untuk 2 detik sebelum menampilkan teka-teki silang berikutnya
@@ -43,5 +43,6 @@ function calculateScore() {
   // Anda dapat menyesuaikan logika ini sesuai kebutuhan Anda
   return Math.floor(Math.random() * 1000); // Contoh: skor acak antara 0 dan 1000
 }
+
 
 window.onload = startTimer;
